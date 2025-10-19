@@ -94,7 +94,7 @@ jobs:
             --skip_tests `
             --skip_nodejs_tests `
             --skip_keras_test `
-            --skip_winml_tests
+            --skip_winml_tests `
             --build_wheel `
             --msbuild_extra_options "IncludeMobileTargets=false" `
             --use_dml `
