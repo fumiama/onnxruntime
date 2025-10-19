@@ -91,9 +91,15 @@ jobs:
             --cmake_generator "Visual Studio 17 2022" `
             --build_shared_lib `
             --skip_onnx_tests `
+            --skip_tests `
+            --skip_nodejs_tests `
+            --skip_keras_test `
+            --skip_winml_tests
             --build_wheel `
+            --msbuild_extra_options "IncludeMobileTargets=false" `
             --use_dml `
             --enable_wcos `
+            --build_nuget `
             --use_vcpkg `
             --use_vcpkg_ms_internal_asset_cache `
             --cmake_extra_defines onnxruntime_ENABLE_NPU_ADAPTER_ENUMERATION=1
