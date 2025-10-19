@@ -124,6 +124,5 @@ jobs:
         with:
           name: onnxruntime-dml-windows-x64
           path: |
-            ${{ runner.temp }}/build/RelWithDebInfo/RelWithDebInfo/include
-            ${{ runner.temp }}/build/RelWithDebInfo/RelWithDebInfo/lib
+            ${{ runner.temp }}/build
           retention-days: 30
