@@ -83,7 +83,7 @@ jobs:
         run: |
           python.exe ${{ github.workspace }}\tools\ci_build\build.py `
             --config RelWithDebInfo `
-            --build_dir build `
+            --build_dir "${{ github.workspace }}\build" `
             --skip_submodule_sync `
             --build_csharp `
             --parallel `
@@ -103,7 +103,7 @@ jobs:
             --update
           python.exe ${{ github.workspace }}\tools\ci_build\build.py `
             --config RelWithDebInfo `
-            --build_dir build `
+            --build_dir "${{ github.workspace }}\build" `
             --skip_submodule_sync `
             --build_csharp `
             --parallel `
@@ -132,5 +132,5 @@ jobs:
         with:
           name: onnxruntime-dml-windows-x64
           path: |
-            ${{ runner.temp }}/build
+            ${{ github.workspace }}/build
           retention-days: 30
