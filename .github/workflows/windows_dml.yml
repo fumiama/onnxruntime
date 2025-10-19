@@ -57,16 +57,6 @@ jobs:
           java-version: '17'
           architecture: x64
 
-      - name: API Documentation Check and generate
-        run: |
-          set ORT_DOXY_SRC=${{ github.workspace }}
-          set ORT_DOXY_OUT=${{ github.workspace }}\RelWithDebInfo\RelWithDebInfo
-          mkdir %ORT_DOXY_SRC%
-          mkdir %ORT_DOXY_OUT%
-          "C:\Program Files\doxygen\bin\doxygen.exe" ${{ github.workspace }}\tools\ci_build\github\Doxyfile_csharp.cfg
-        working-directory: ${{ github.workspace }}
-        shell: cmd
-
       - uses: actions/setup-dotnet@v5
         env:
           PROCESSOR_ARCHITECTURE: x64
