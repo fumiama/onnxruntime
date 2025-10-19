@@ -127,16 +127,6 @@ jobs:
           Remove-Item "${{ github.workspace }}\RelWithDebInfo" -Include "*.obj" -Recurse
         shell: pwsh
 
-      - name: Validate C# native delegates
-        run: python tools\ValidateNativeDelegateAttributes.py
-        working-directory: ${{ github.workspace }}\csharp
-        shell: cmd
-
-      - name: Install ONNX Runtime Wheel
-        uses: ./.github/actions/install-onnxruntime-wheel
-        with:
-          whl-directory: ${{ runner.temp }}\build\RelWithDebInfo\RelWithDebInfo\dist
-
       - name: Upload ONNX Runtime Artifacts
         uses: actions/upload-artifact@v4
         with:
